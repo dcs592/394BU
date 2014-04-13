@@ -1,8 +1,3 @@
-var rain = false;
-var sunny = false;
-var location;
-var state;
-
 
 function getLocation(form) {
 	var city = form.city.value;
@@ -70,7 +65,7 @@ function getWeather() {
 			var precip = parsed_json['forecast']['txt_forecast']['forecastday'][((time < 17) ? 0 : 1)]['pop'];
 			console.log(precip);
 			if (precip > 50) {
-				rain = true;
+				setrain();
 			}
 			$("#precip").prepend(precip);
 		},
@@ -95,10 +90,9 @@ function listsuggestions(temp) {
 	console.log(temp);
 	var condition = findcondition(temp);
 	document.getElementById(condition).style.display='block';
-	if (rain==true) {
-		document.getElementById('rain').style.display='block';
-	}
 }
 
-
+function setrain() {
+	document.getElementById('rain').style.display='block';
+}
 
