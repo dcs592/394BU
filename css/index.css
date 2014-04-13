@@ -136,8 +136,7 @@ body {
 }
 
 .suggestion p {
-	text-align: center;
-	margin-top: 120px;
+	margin-top: 50px;
 	font-size: large;
 	background: #333333;
 	color: white;
