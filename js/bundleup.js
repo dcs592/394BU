@@ -63,16 +63,17 @@ function getWeather() {
 	var time = date.getHours();
 
 	$.ajax( {
-		url : "http://api.wunderground.com/api/5bb4e5428ca66275/forecast/q/" + state + "/"+city+".json",
+		//5bb4e5428ca66275
+		url : "http://api.wunderground.com/api/871d6fab2c5007d4/forecast/q/" + state + "/"+city+".json",
 		dataType: "jsonp",
-		success: function() {
+		success: function(parsed_json) {
 			var precip = parsed_json['forecast']['txt_forecast']['forecastday'][((time < 17) ? 0 : 1)]['pop'];
 			console.log(precip);
 			if (precip > 50) {
 				rain = true;
 			}
 			$("#precip").prepend(precip);
-		}
+		},
 		error: function() {
 			$("#error").append("Problem with finding forecast.");
 			$("#error").prop("hidden", false);
