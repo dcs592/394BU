@@ -16,7 +16,7 @@ function getWeather() {
 
 	var city = localStorage.getItem("city");
 	var state = localStorage.getItem("state");
-	$("#loc").append('<-- ' + city + ', ' + state);
+	$("#loc").append(city + ', ' + state);
 	var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + state;
 	
 	$.ajax( {

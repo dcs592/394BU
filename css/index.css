@@ -37,6 +37,11 @@ body {
 	color: #969696;
 }
 
+.header a {
+	font-size: x-large;
+	color: orange;
+}
+
 .break {
 	background: #969696;
 	background: orange;
