@@ -51,12 +51,13 @@ function getWeather() {
 			$("#weathericon").attr("src", iconurl);
 			desc = data['weather'][0]['main'];
 			$("#desc").append(desc);
+
+			listsuggestions(ftemp);
 		},
 		error : function(errorData) {
 			alert("Error while getting weather data :: " + errorData.status);
 		}
 	});
-	listsuggestions(temp);
 	return;
 }
 
@@ -69,6 +70,7 @@ function findcondition(temp) {
 }
 
 function listsuggestions(temp) {
+	console.log(temp);
 	var condition = findcondition(temp);
 	document.getElementById(condition).style.display='block';
 	if (rain==true) {

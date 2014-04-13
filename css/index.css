@@ -126,6 +126,7 @@ body {
 .sug {
 	background: #333333;
 	float: left;
+	width: 100%;
 }
 
 .suggestion {
